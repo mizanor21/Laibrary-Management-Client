@@ -5,7 +5,7 @@ const CseBook = ({ cseBook }) => {
   console.log(cseBook);
   return (
     <div className="card bg-base-100 shadow-xl">
-      <figure>
+      <figure className="w-[300px] h-[300px]">
         <img src={img} alt="Book img not found!" />
       </figure>
       <div className="card-body">

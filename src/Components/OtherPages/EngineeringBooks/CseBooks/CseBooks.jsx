@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import CseBook from "./CseBook";
 import book_create from "../../../../assets/logo/book-entry-logo.png";
+import AddBook from "./AddBook";
 
 const CseBooks = () => {
   const cseBooks = useLoaderData();
@@ -19,8 +20,7 @@ const CseBooks = () => {
         </button>
         <dialog id="my_modal_2" className="modal">
           <form method="dialog" className="modal-box">
-            <h3 className="font-bold text-lg">Hello!</h3>
-            <p className="py-4">Press ESC key or click outside to close</p>
+            <AddBook></AddBook>
           </form>
           <form method="dialog" className="modal-backdrop">
             <button>close</button>
