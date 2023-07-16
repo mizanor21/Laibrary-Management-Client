@@ -1,0 +1,11 @@
+.bg-white {
+  transition: top 0.3s ease;
+}
+
+.show {
+  top: 0;
+}
+
+.hide {
+  top: -100px; /* Adjust the value to hide the navbar completely */
+}
