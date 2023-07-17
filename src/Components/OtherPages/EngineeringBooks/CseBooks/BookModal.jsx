@@ -8,6 +8,7 @@ const BookModal = ({ book }) => {
   const { img, title, auther, edition, publisher } = book;
 
   const handleSubmit = () => {
+    toast.success("Successfully book added!");
     axios
       .post("http://localhost:5000/borrow-book-info", {
         email: user?.email,
@@ -18,7 +19,8 @@ const BookModal = ({ book }) => {
         img,
       })
       .then(() => {
-        toast.success(`Successfully book added!`);
+        toast.success("Successfully book added!");
+        console.log("Book successfully added!");
       })
       .catch((error) => {
         console.error("Error adding book:", error);

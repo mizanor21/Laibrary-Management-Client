@@ -1,5 +1,5 @@
 import BorrowBooks from "../Components/OtherPages/BorrowBooks/BorrowBooks";
-import CseBooks from "../Components/OtherPages/EngineeringBooks/Books/Books";
+import CseBooks from "../Components/OtherPages/EngineeringBooks/CseBooks/CseBooks";
 import Login from "../Components/OtherPages/Login/Login";
 import Signup from "../Components/OtherPages/Login/Signup";
 

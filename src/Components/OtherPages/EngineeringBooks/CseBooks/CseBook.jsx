@@ -7,6 +7,7 @@ const CseBook = ({ book, setBook }) => {
   const { book_id, img, title, auther, edition, publisher, quantity } = book;
 
   const deleteBook = (id) => {
+    toast.success(`Deleted Book!`);
     axios.delete(`http://localhost:5000/cse-book-delete/${id}`).then(() => {
       toast.success(`Deleted Book!`);
     });
@@ -37,7 +38,7 @@ const CseBook = ({ book, setBook }) => {
             htmlFor="product_modal"
             className="btn btn-outline btn-warning"
           >
-            Book Now
+            Borrow
           </label>
         ) : (
           <button

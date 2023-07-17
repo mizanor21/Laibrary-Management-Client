@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import CseBook from "./Book";
+import CseBook from "./CseBook";
 import book_create from "../../../../assets/logo/book-entry-logo.png";
 import AddBook from "./AddBook";
 import { AuthContext } from "../../../Contexts/UserContext";
