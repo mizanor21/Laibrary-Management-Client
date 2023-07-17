@@ -1,6 +1,7 @@
 import BorrowBooks from "../Components/OtherPages/BorrowBooks/BorrowBooks";
 import CseBooks from "../Components/OtherPages/EngineeringBooks/CseBooks/CseBooks";
 import EeeBooks from "../Components/OtherPages/EngineeringBooks/EeeBooks/EeeBooks";
+import EnglishBooks from "../Components/OtherPages/GeneralBooks/EnglishBooks/EnglishBooks";
 import Login from "../Components/OtherPages/Login/Login";
 import Signup from "../Components/OtherPages/Login/Signup";
 
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         path: "/eee-books",
         element: <EeeBooks></EeeBooks>,
         loader: () => fetch("http://localhost:5000/eee-books"),
+      },
+      {
+        path: "/english-books",
+        element: <EnglishBooks></EnglishBooks>,
+        loader: () => fetch("http://localhost:5000/english-books"),
       },
       {
         path: "/borrow-books",

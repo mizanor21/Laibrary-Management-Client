@@ -44,14 +44,12 @@ const Navbar = () => {
       submenu: [
         { label: "CSE Books", path: "/cse-books" },
         { label: "EEE Books", path: "/eee-books" },
-        { label: "Textile Books", path: "/textile-books" },
-        { label: "Civil Books", path: "/civil-books" },
       ],
     },
     {
       label: "General Books",
       submenu: [
-        { label: "English", path: "/" },
+        { label: "English", path: "/english-books" },
         { label: "LLB", path: "/" },
       ],
     },
@@ -106,7 +104,7 @@ const Navbar = () => {
                   {item.label}
                 </NavLink>
                 {item.submenu && activeMenu === index && (
-                  <ul className="absolute left-0 mt-2 py-2 bg-white rounded shadow-lg flex flex-wrap">
+                  <ul className="absolute left-0 mt-2 py-2 bg-white rounded shadow-lg">
                     {item.submenu.map((subItem, subIndex) => (
                       <li key={subIndex}>
                         <NavLink
