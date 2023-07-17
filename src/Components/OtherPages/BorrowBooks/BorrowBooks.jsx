@@ -1,6 +1,5 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import BorrowBook from "./BorrowBook";
 
 const BorrowBooks = () => {
   const borrowBooks = useLoaderData();
