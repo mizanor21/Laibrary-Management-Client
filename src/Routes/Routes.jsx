@@ -1,4 +1,6 @@
 import CseBooks from "../Components/OtherPages/EngineeringBooks/CseBooks/CseBooks";
+import Login from "../Components/OtherPages/Login/Login";
+import Signup from "../Components/OtherPages/Login/Signup";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../Layouts/Main");
@@ -12,6 +14,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <Signup></Signup>,
       },
       {
         path: "/cse-books",

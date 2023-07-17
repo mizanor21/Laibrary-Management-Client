@@ -1,5 +1,6 @@
 import axios from "axios";
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../../Contexts/UserContext";
 
 const CseBook = ({ cseBook }) => {
   const { book_id, img, title, auther, edition, publisher, quantity } = cseBook;
@@ -7,8 +8,8 @@ const CseBook = ({ cseBook }) => {
   const deleteBook = (id) => {
     axios.delete(`http://localhost:5000/cse-book-delete/${id}`);
   };
+  const { user } = useContext(AuthContext);
 
-  console.log(cseBook);
   return (
     <div className="card bg-base-100 shadow-xl">
       <figure className="w-[300px] h-[300px]">
@@ -27,7 +28,9 @@ const CseBook = ({ cseBook }) => {
           <div className="badge badge-outline">{edition}</div>
           <div className="badge badge-outline">{publisher}</div>
         </div>
-        <button className="btn btn-sm mt-3">Borrow Book</button>
+        {user?.displayName && (
+          <button className="btn btn-sm mt-3">Borrow Book</button>
+        )}
         <button
           onClick={() => {
             deleteBook(book_id);

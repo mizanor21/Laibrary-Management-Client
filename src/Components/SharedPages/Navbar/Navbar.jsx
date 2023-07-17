@@ -40,7 +40,7 @@ const Navbar = () => {
       ],
     },
     { label: "Borrow Books", path: "/" },
-    { label: "Users", path: "/" },
+    { label: "Login Users", path: "/login" },
   ];
 
   useEffect(() => {
