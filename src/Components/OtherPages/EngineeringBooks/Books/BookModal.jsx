@@ -10,7 +10,7 @@ const BookModal = ({ book }) => {
   const handleSubmit = () => {
     axios
       .post("http://localhost:5000/borrow-book-info", {
-        email: user.email,
+        email: user?.email,
         title,
         auther,
         edition,
@@ -31,7 +31,9 @@ const BookModal = ({ book }) => {
         <input type="checkbox" id="product_modal" className="modal-toggle" />
         <label htmlFor="product_modal" className="modal cursor-pointer">
           <label className="modal-box relative" htmlFor="">
-            <h3 className="text-lg font-bold mb-5">{title}</h3>
+            <h3 className="text-center text-2xl font-serif font-bold mb-5 pb-2 border-b-2">
+              Borrow Book By - {user?.email}
+            </h3>
             <div className="mb-4">
               <label htmlFor="email" className="block font-medium mb-1">
                 Email
@@ -41,7 +43,7 @@ const BookModal = ({ book }) => {
                 id="email"
                 className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none"
                 name="email"
-                defaultValue={user.email}
+                defaultValue={user?.email}
                 disabled
               />
             </div>
@@ -115,7 +117,7 @@ const BookModal = ({ book }) => {
               onClick={handleSubmit}
               className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
             >
-              Submit
+              Borrow Book
             </button>
           </label>
         </label>

@@ -55,7 +55,7 @@ const Navbar = () => {
         { label: "LLB", path: "/" },
       ],
     },
-    { label: "Borrow Books", path: "/" },
+    { label: "Borrow Books", path: "/borrow-books" },
   ];
 
   useEffect(() => {

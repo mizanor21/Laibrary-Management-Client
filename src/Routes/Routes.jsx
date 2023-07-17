@@ -1,3 +1,4 @@
+import BorrowBooks from "../Components/OtherPages/BorrowBooks/BorrowBooks";
 import CseBooks from "../Components/OtherPages/EngineeringBooks/Books/Books";
 import Login from "../Components/OtherPages/Login/Login";
 import Signup from "../Components/OtherPages/Login/Signup";
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
         path: "/cse-books",
         element: <CseBooks></CseBooks>,
         loader: () => fetch("http://localhost:5000/cse-books"),
+      },
+      {
+        path: "/borrow-books",
+        element: <BorrowBooks></BorrowBooks>,
+        loader: () => fetch("http://localhost:5000/borrow-books"),
       },
     ],
   },
