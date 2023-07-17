@@ -1,12 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/logo/logo1.png";
 import "./Navbar.css";
+import { AuthContext } from "../../Contexts/UserContext";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
+
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        const user = result.user;
+        toast.success("Logout successfully!", user?.email);
+      })
+      .catch((error) => {
+        // const errorMessage = error.message;
+        // toast.error(errorMessage)
+      });
+  };
 
   const handleMenuEnter = (menuIndex) => {
     setActiveMenu(menuIndex);
@@ -40,7 +56,6 @@ const Navbar = () => {
       ],
     },
     { label: "Borrow Books", path: "/" },
-    { label: "Login Users", path: "/login" },
   ];
 
   useEffect(() => {
@@ -107,6 +122,15 @@ const Navbar = () => {
                 )}
               </li>
             ))}
+            {user ? (
+              <>
+                <button onClick={handleLogOut}>Logout</button>
+              </>
+            ) : (
+              <li>
+                <Link to={"/login"}>Login</Link>
+              </li>
+            )}
           </ul>
         </div>
         <div className="flex items-center lg:hidden">
@@ -178,6 +202,15 @@ const Navbar = () => {
                   )}
                 </li>
               ))}
+              {user ? (
+                <>
+                  <button onClick={handleLogOut}>Logout</button>
+                </>
+              ) : (
+                <li>
+                  <Link to={"/login"}>Login</Link>
+                </li>
+              )}
             </ul>
           )}
         </div>

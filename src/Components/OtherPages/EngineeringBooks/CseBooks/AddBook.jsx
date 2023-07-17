@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 const AddBook = () => {
   const [title, setTitle] = useState("");
@@ -20,7 +21,7 @@ const AddBook = () => {
         quantity: quantity,
       })
       .then(() => {
-        alert("Successfully Book Added!");
+        toast.success(`Successfully book added!`);
       })
       .catch((error) => {
         console.error("Error adding book:", error);
