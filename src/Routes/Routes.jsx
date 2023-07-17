@@ -1,4 +1,4 @@
-import CseBooks from "../Components/OtherPages/EngineeringBooks/CseBooks/CseBooks";
+import CseBooks from "../Components/OtherPages/EngineeringBooks/Books/Books";
 import Login from "../Components/OtherPages/Login/Login";
 import Signup from "../Components/OtherPages/Login/Signup";
 

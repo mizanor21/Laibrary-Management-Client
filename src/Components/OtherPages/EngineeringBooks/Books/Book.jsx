@@ -3,8 +3,8 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../../Contexts/UserContext";
 import { toast } from "react-hot-toast";
 
-const CseBook = ({ cseBook }) => {
-  const { book_id, img, title, auther, edition, publisher, quantity } = cseBook;
+const CseBook = ({ book, setBook }) => {
+  const { book_id, img, title, auther, edition, publisher, quantity } = book;
 
   const deleteBook = (id) => {
     axios.delete(`http://localhost:5000/cse-book-delete/${id}`).then(() => {
@@ -32,7 +32,13 @@ const CseBook = ({ cseBook }) => {
           <div className="badge badge-outline">{publisher}</div>
         </div>
         {user ? (
-          <button className="btn btn-sm mt-3">Borrow Book</button>
+          <label
+            onClick={() => setBook(book)}
+            htmlFor="product_modal"
+            className="btn btn-outline btn-warning"
+          >
+            Book Now
+          </label>
         ) : (
           <button
             onClick={() => {
