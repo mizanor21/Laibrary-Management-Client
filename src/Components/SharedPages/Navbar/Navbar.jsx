@@ -4,6 +4,7 @@ import logo from "../../../assets/logo/logo1.png";
 import "./Navbar.css";
 import { AuthContext } from "../../Contexts/UserContext";
 import { toast } from "react-hot-toast";
+import UserBorrowed from "../../OtherPages/UserBorrowed/UserBorrowed";
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -234,6 +235,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
+      {user && <UserBorrowed></UserBorrowed>}
     </div>
   );
 };

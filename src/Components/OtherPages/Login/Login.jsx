@@ -22,23 +22,8 @@ const Login = () => {
       });
   };
 
-  const { user } = useContext(AuthContext);
-
-  const [borrowBooks, setBorrowBooks] = useState([]);
-
-  useEffect(() => {
-    fetch(`http://localhost:5000/borrow-books-spe?email=${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => setBorrowBooks(data));
-  }, [user?.email]);
-
   return (
     <div className="relative flex justify-center items-center min-h-screen">
-      {user && (
-        <h5 className="absolute -top-0 z-50 right-5 border-b-8 border-b-green-600 text-8xl font-bold text-center bg-slate-50 shadow-2xl p-12">
-          {borrowBooks.length}
-        </h5>
-      )}
       <img className="w-1/3 hidden md:block" src={loginLogo} alt="" />
 
       <div className="shadow-xl p-10 rounded-lg">
