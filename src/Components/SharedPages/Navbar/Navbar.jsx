@@ -50,10 +50,9 @@ const Navbar = () => {
       label: "General Books",
       submenu: [
         { label: "English", path: "/english-books" },
-        { label: "LLB", path: "/" },
+        { label: "BBA", path: "/bba-books" },
       ],
     },
-    { label: "Borrow Books", path: "/borrow-books" },
   ];
 
   useEffect(() => {
@@ -122,12 +121,23 @@ const Navbar = () => {
             ))}
             {user ? (
               <>
-                <button onClick={handleLogOut}>Logout</button>
+                <li className="mr-5">
+                  <Link to={"/user-borrow-book"}>User Borrow Books</Link>
+                </li>
+                <li>
+                  <button onClick={handleLogOut}>Logout</button>
+                </li>
               </>
             ) : (
-              <li>
-                <Link to={"/login"}>Login</Link>
-              </li>
+              <>
+                <li className="mr-5">
+                  <Link to={"/borrow-books"}>All Borrow Books</Link>
+                </li>
+
+                <li>
+                  <Link to={"/login"}>Login</Link>
+                </li>
+              </>
             )}
           </ul>
         </div>
@@ -202,12 +212,23 @@ const Navbar = () => {
               ))}
               {user ? (
                 <>
-                  <button onClick={handleLogOut}>Logout</button>
+                  <li className="mr-5">
+                    <Link to={"/user-borrow-book"}>User Borrow Books</Link>
+                  </li>
+                  <li>
+                    <button onClick={handleLogOut}>Logout</button>
+                  </li>
                 </>
               ) : (
-                <li>
-                  <Link to={"/login"}>Login</Link>
-                </li>
+                <>
+                  <li className="mr-5">
+                    <Link to={"/borrow-books"}>All Borrow Books</Link>
+                  </li>
+
+                  <li>
+                    <Link to={"/login"}>Login</Link>
+                  </li>
+                </>
               )}
             </ul>
           )}

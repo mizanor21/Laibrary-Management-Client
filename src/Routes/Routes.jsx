@@ -4,6 +4,7 @@ import EeeBooks from "../Components/OtherPages/EngineeringBooks/EeeBooks/EeeBook
 import EnglishBooks from "../Components/OtherPages/GeneralBooks/EnglishBooks/EnglishBooks";
 import Login from "../Components/OtherPages/Login/Login";
 import Signup from "../Components/OtherPages/Login/Signup";
+import UserBorrowBook from "../Components/OtherPages/UserBorrowBook/UserBorrowBook";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../Layouts/Main");
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
         path: "/borrow-books",
         element: <BorrowBooks></BorrowBooks>,
         loader: () => fetch("http://localhost:5000/borrow-books"),
+      },
+      {
+        path: "/user-borrow-book",
+        element: <UserBorrowBook></UserBorrowBook>,
       },
     ],
   },
